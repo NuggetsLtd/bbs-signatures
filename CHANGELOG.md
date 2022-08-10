@@ -1,3 +1,7 @@
+## [1.1.2](https://github.com/NuggetsLtd/bbs-signatures/compare/v1.1.1...v1.1.2) (2022-08-10)
+
+## [1.1.2](https://github.com/NuggetsLtd/bbs-signatures/compare/v1.1.1...v1.1.2) (2022-08-10)
+
 ## 1.1.1 (2022-08-10)
 
 ### Bug Fixes
