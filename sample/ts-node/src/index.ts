@@ -17,7 +17,7 @@ import {
   blsVerify,
   blsCreateProof,
   blsVerifyProof,
-} from "@mattrglobal/bbs-signatures";
+} from "@nuggetslife/bbs-signatures";
 
 const main = async () => {
   //Generate a new key pair

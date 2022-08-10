@@ -13,6 +13,7 @@
 
 /**
  * A request to create a BBS signature that features blinded/committed messages
+ * 
  */
 export interface BbsBlindSignContextRequest {
   /**
@@ -22,7 +23,7 @@ export interface BbsBlindSignContextRequest {
   /**
    * The zero based indices of which messages to hide
    */
-  readonly hidden: readonly number[];
+  readonly blinded: readonly number[];
   /**
    * A nonce for the resulting proof
    */

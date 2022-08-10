@@ -22,6 +22,10 @@ import {
   BlsBbsVerifyRequest,
   BbsCreateProofRequest,
   BbsVerifyProofRequest,
+  BbsBlindSignContextRequest,
+  BbsBlindSignContext,
+  BbsVerifyBlindSignContextRequest,
+  BbsBlindSignRequest
 } from "./types";
 
 export * from "./types";
@@ -71,3 +75,21 @@ export function blsCreateProof(
 export function blsVerifyProof(
   request: BbsVerifyProofRequest
 ): Promise<BbsVerifyResult>;
+
+
+export function commitmentForBlindSignRequest(
+  request: BbsBlindSignContextRequest
+): Promise<BbsBlindSignContext>;
+
+export function verifyBlindSignContext(
+  request: BbsVerifyBlindSignContextRequest
+): Promise<boolean>;
+
+export function blindSign(
+  request: BbsBlindSignRequest
+): Promise<Uint8Array>;
+
+export function unblindSignature(
+  blindSignature: Uint8Array,
+  blindingFactor: Uint8Array
+): Promise<Uint8Array>;

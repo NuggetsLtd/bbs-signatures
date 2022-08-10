@@ -2,7 +2,7 @@
   "name": "bbs-signatures-sample-browser",
   "version": "1.0.0",
   "description": "A sample for using bbs-signatures in browser",
-  "repository": "https://github.com/mattrglobal/bbs-signatures",
+  "repository": "https://github.com/NuggetsLtd/bbs-signatures",
   "author": "Mattr",
   "license": "Apache-2.0",
   "private": false,
@@ -20,6 +20,6 @@
     "webpack-dev-server": "4.9.2"
   },
   "dependencies": {
-    "@mattrglobal/bbs-signatures": "link:../../"
+    "@nuggetslife/bbs-signatures": "link:../../"
   }
 }

@@ -18,23 +18,27 @@ const {
   nodejs,
 } = require("./util");
 
-let useWasm = !(
-  nodejs &&
-  (!process.env.BBS_SIGNATURES_MODE ||
-    process.env.BBS_SIGNATURES_MODE === BBS_SIGNATURES_MODES.nodejs)
-);
+if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+  module.exports = require("@nuggetslife/react-native-bbs-signatures").default;
+} else {
+  let useWasm = !(
+    nodejs &&
+    (!process.env.BBS_SIGNATURES_MODE ||
+      process.env.BBS_SIGNATURES_MODE === BBS_SIGNATURES_MODES.nodejs)
+  )
 
-try {
-  if (!useWasm) {
-    module.exports = require("@mattrglobal/node-bbs-signatures");
+  try {
+    if (!useWasm) {
+        module.exports = require("@nuggetslife/ffi-bbs-signatures");
+    }
+  } catch {
+    if (process.env.BBS_SIGNATURES_MODE === BBS_SIGNATURES_MODES.nodejs) {
+      throw new Error(FAILED_TO_LOAD_NODE_MODULE);
+    }
+    useWasm = true;
   }
-} catch {
-  if (process.env.BBS_SIGNATURES_MODE === BBS_SIGNATURES_MODES.nodejs) {
-    throw new Error(FAILED_TO_LOAD_NODE_MODULE);
-  }
-  useWasm = true;
-}
 
-if (useWasm) {
-  module.exports = require("./wasm_module");
+  if (useWasm) {
+      module.exports = require("./wasm_module");
+  }
 }

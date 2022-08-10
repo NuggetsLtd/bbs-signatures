@@ -2,7 +2,7 @@
   "name": "bbs-signatures-sample",
   "version": "1.0.0",
   "description": "A sample for using bbs-signatures",
-  "repository": "https://github.com/mattrglobal/bbs-signatures",
+  "repository": "https://github.com/NuggetsLtd/bbs-signatures",
   "author": "Mattr Limited",
   "license": "Apache-2.0",
   "private": false,
@@ -15,6 +15,6 @@
     "typescript": "4.3.5"
   },
   "dependencies": {
-    "@mattrglobal/bbs-signatures": "link:../../"
+    "@nuggetslife/bbs-signatures": "link:../../"
   }
 }
